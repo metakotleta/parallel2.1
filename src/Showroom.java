@@ -24,6 +24,4 @@ public class Showroom {
     public synchronized void newCarAttention() {
         notifyAll();
     }
-
-
 }
