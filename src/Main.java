@@ -1,4 +1,5 @@
 public class Main {
+    public static final long SLEEP = 1000;
 
     public static void main(String[] args) throws InterruptedException {
         Producer producer = new Producer();
@@ -8,9 +9,9 @@ public class Main {
 
         new Thread(null, () -> producer.produce(showroom),"BMW").start();
         new Thread(null, buying, "Покупатель1").start();
-        Thread.sleep(1000);
+        Thread.sleep(SLEEP);
         new Thread(null, buying, "Покупатель2").start();
-        Thread.sleep(1000);
+        Thread.sleep(SLEEP);
         new Thread(null, buying, "Покупатель3").start();
     }
 }
