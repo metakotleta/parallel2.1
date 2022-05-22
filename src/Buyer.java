@@ -1,11 +1,11 @@
 public class Buyer {
 
-    public static final long BUY_TIMER = 1000;
+    public static final long BUY_TIMER = 2000;
     public static final int MAX_CARS = 3;
-    private Producer producer;
+    private Showroom showroom;
 
-    public Buyer(Producer producer) {
-        this.producer = producer;
+    public Buyer(Showroom showroom) {
+        this.showroom = showroom;
     }
 
     public void buy() {
@@ -18,7 +18,7 @@ public class Buyer {
                 System.out.println("Производитель прекратил продажи в стране покупателя");
                 e.printStackTrace();
             }
-            producer.sell();
+            showroom.sell();
         }
         Thread.currentThread().interrupt();
     }
