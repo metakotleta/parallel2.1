@@ -1,9 +1,10 @@
 public class Producer {
     public static final long PRODUCE_TIME = 3000;
-    public static int carsCount = 0;
+    public static final long MAX_CARS = 9;
+    public static int carsCount = 0;    
 
     public void produce(Showroom showroom) {
-        while (carsCount++ < 9) {
+        while (carsCount++ < MAX_CARS) {
             try {
                 Thread.sleep(PRODUCE_TIME);
                 showroom.getCars().offer(new Car());
